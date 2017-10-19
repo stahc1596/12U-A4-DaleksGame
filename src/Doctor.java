@@ -13,7 +13,8 @@ public class Doctor {
      * @param theCol The column this Doctor starts at.
      */
     public Doctor(int theRow, int theCol) {
-
+        this.row = theRow;
+        this.col = theCol;
     }
 
     /**
@@ -28,7 +29,7 @@ public class Doctor {
      * @param newCol The column the player clicked on.
      */
     public void move(int newRow, int newCol) {
-
+        
     }
 
     /**
@@ -37,7 +38,7 @@ public class Doctor {
      * @return This Doctor's row.
      */
     public int getRow() {
-
+        return row;
     }
 
     /**
@@ -46,7 +47,7 @@ public class Doctor {
      * @return This Doctor's column.
      */
     public int getCol() {
-
+        return col;
     }
 
 }
