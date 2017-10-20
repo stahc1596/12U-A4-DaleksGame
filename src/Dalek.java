@@ -28,7 +28,15 @@ public class Dalek {
      * @param doc The Doctor to move towards.
      */
     public void advanceTowards(Doctor doc) {
-
+        if(doc.getRow() > this.row){
+            this.row = this.row++;
+        }else if(doc.getRow() < this.row){
+            this.row = this.row--;
+        }if(doc.getCol() > this.col){
+            this.col = this.col++;
+        }else if(doc.getCol() < this.col){
+            this.col = this.col--;
+        }
     }
 
     /**
@@ -53,7 +61,7 @@ public class Dalek {
      * Sets the Dalek to be in a crashed state.
      */
     public void crash() {
-        
+        this.hasCrashed = true;
     }
 
     /**
@@ -62,8 +70,11 @@ public class Dalek {
      * @return true if this Dalek has crashed, false otherwise
      */
     public boolean hasCrashed() {
-        //Edit later
-        return true;
+        if(this.hasCrashed == true){
+            return true;
+        }else{
+            return false;
+        }
     }
 
 }

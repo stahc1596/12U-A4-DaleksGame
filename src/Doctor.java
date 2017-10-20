@@ -5,7 +5,6 @@
 public class Doctor {
 
     private int row, col;
-
     /**
      * Initializes the variables for a Doctor.
      *

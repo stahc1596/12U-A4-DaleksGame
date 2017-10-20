@@ -16,6 +16,8 @@ public class CatchGame {
      */
     private Dalek[] dalek;
     private boolean alive;
+    private Doctor doc;
+    private Board b;
 
     /**
      * The constructor for the game. 
@@ -32,7 +34,7 @@ public class CatchGame {
             Dalek c = new Dalek((int)(Math.random()*12), (int)(Math.random()*12));
             this.dalek[i] = c;
             b.putPeg(Color.black, dalek[i].getRow(), dalek[i].getCol());
-        }
+        }        
     }
     
     /**
@@ -41,7 +43,14 @@ public class CatchGame {
      */
     public void playGame() {
         while(alive){
-            
+            for(int i = 0; i < 3; i++){
+                if(dalek[i].hasCrashed() == false){
+                    dalek[i].advanceTowards(doc);
+                }
+            }
+            Coordinate click = b.getClick();
+            int clickRow = click.getRow();
+            int clickCol = click.getCol();
         }
     }
 
