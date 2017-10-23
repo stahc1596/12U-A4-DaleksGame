@@ -28,7 +28,23 @@ public class Doctor {
      * @param newCol The column the player clicked on.
      */
     public void move(int newRow, int newCol) {
-        
+        if(newRow - this.row > 1 || newRow - this.row < -1
+                && newCol - this.col > 1 || newCol - this.col < -1){
+            this.row = (int)(Math.random()*12);
+            this.col = (int)(Math.random()*12);
+        }if(newRow - this.row == 1){
+            this.row++;
+        }else if(newRow - this.row == -1){
+            this.row--;
+        }else{
+            
+        }if(newCol - this.col == 1){
+            this.col++;
+        }else if(newCol - this.col == -1){
+            this.col--;
+        }else{
+            
+        }
     }
 
     /**

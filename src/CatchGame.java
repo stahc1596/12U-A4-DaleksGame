@@ -15,9 +15,9 @@ public class CatchGame {
      * Make sure to create a Board, 3 Daleks, and a Doctor
      */
     private Dalek[] dalek;
-    private boolean alive;
-    private Doctor doc;
-    private Board b;
+    private boolean alive = true;
+    private Doctor doc = new Doctor((int)(Math.random()*12), (int)(Math.random()*12));
+    private Board b = new Board(12, 12);
 
     /**
      * The constructor for the game. 
@@ -25,9 +25,6 @@ public class CatchGame {
      * (create people, set positions, etc.)
      */
     public CatchGame(){
-        this.alive = true;
-        Board b = new Board(12, 12);
-        Doctor doc = new Doctor((int)(Math.random()*12), (int)(Math.random()*12));
         b.putPeg(Color.green, doc.getRow(), doc.getCol());
         this.dalek = new Dalek[3];
         for(int i = 0; i < 3; i++){
@@ -43,14 +40,21 @@ public class CatchGame {
      */
     public void playGame() {
         while(alive){
-            for(int i = 0; i < 3; i++){
-                if(dalek[i].hasCrashed() == false){
-                    dalek[i].advanceTowards(doc);
-                }
-            }
             Coordinate click = b.getClick();
             int clickRow = click.getRow();
             int clickCol = click.getCol();
+            b.removePeg(doc.getRow(), doc.getCol());
+            doc.move(clickRow, clickCol);
+            b.putPeg(Color.green, doc.getRow(), doc.getCol());
+            for(int i = 0; i < 3; i++){
+                b.removePeg(dalek[i].getRow(), dalek[i].getCol());
+                dalek[i].advanceTowards(doc);
+                b.putPeg(Color.black, dalek[i].getRow(), dalek[i].getCol());
+                if(doc.getRow() == dalek[i].getRow() && doc.getCol() == dalek[i].getCol()){
+                    alive = false;
+                    b.displayMessage("You Lose! Try again?");
+                }
+            }
         }
     }
 
