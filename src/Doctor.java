@@ -4,6 +4,7 @@
  */
 public class Doctor {
 
+    //Doctor's row and column
     private int row, col;
     /**
      * Initializes the variables for a Doctor.
@@ -12,6 +13,7 @@ public class Doctor {
      * @param theCol The column this Doctor starts at.
      */
     public Doctor(int theRow, int theCol) {
+        //Set doctor's starting row and column
         this.row = theRow;
         this.col = theCol;
     }
@@ -28,10 +30,15 @@ public class Doctor {
      * @param newCol The column the player clicked on.
      */
     public void move(int newRow, int newCol) {
+        //Doctor's alogrithm to how he moves relative to the players click
+        //If the player clicks anywhere on the board that's not beside the doctor,
+        //then the doctor teleports to a random location
         if(newRow - this.row > 1 || newRow - this.row < -1
                 && newCol - this.col > 1 || newCol - this.col < -1){
             this.row = (int)(Math.random()*12);
             this.col = (int)(Math.random()*12);
+            //If the player clicks anywhere on the board that is beside the doctor,
+            //then the doctor moves there
         }if(newRow - this.row == 1){
             this.row++;
         }else if(newRow - this.row == -1){

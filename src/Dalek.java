@@ -4,7 +4,9 @@
  */
 public class Dalek {
 
+    //Dalek's row and column
     private int row, col;
+    //Whether or not the Dalek has crashed or not
     private boolean hasCrashed;
 
     /**
@@ -14,8 +16,10 @@ public class Dalek {
      * @param theCol The column this Dalek starts at.
      */
     public Dalek(int theRow, int theCol) {
+        //Set the Dalek's starting row and column
         this.row = theRow;
         this.col = theCol;
+        //Every Dalek starts in a non-crashed state
         this.hasCrashed = false;
     }
 
@@ -28,6 +32,7 @@ public class Dalek {
      * @param doc The Doctor to move towards.
      */
     public void advanceTowards(Doctor doc) {
+        //Dalek's algorithm to move towards the doctor
         if(doc.getRow() > this.row){
             this.row++;
         }else if(doc.getRow() < this.row){
@@ -65,6 +70,8 @@ public class Dalek {
      * Sets the Dalek to be in a crashed state.
      */
     public void crash() {
+        //If the Dalek has crashed, then the variable puts the Dalek into a
+        //crashed state
         this.hasCrashed = true;
     }
 
