@@ -106,7 +106,8 @@ public class CatchGame {
                 //Replace a red peg to show that two or more Dalek's crashed here
                 b.putPeg(Color.red, dalek[1].getRow(), dalek[1].getCol());
                 //If every Dalek has crashed, then the doctor wins the game
-            }if(dalek[1].hasCrashed() && dalek[2].hasCrashed() && dalek[0].hasCrashed()){
+            }if(dalek[1].hasCrashed() && dalek[2].hasCrashed() && dalek[0].hasCrashed()
+                    && alive){
                 enemy = false;
                 b.displayMessage("You Win!");
             }
