@@ -53,7 +53,7 @@ public class CatchGame {
      * selects a square, when the Daleks move, when the game is won/lost.
      */
     public void playGame() {
-        //While the doctor and the Dalek's are alive, the game will continue
+        //While the doctor and the Dalek's are alive, the game will play
         while(alive && enemy){
             //Doctor clicks where he wants to go
             Coordinate click = b.getClick();
