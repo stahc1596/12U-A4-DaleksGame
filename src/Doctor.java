@@ -57,8 +57,6 @@ public class Doctor {
         }else{
             
         }
-        System.out.println(this.row);
-        System.out.println(this.col);
     }
 
     /**
