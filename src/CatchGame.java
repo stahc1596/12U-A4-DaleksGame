@@ -71,7 +71,11 @@ public class CatchGame {
                     //The Dalek moves one step closer to the doctor
                     b.removePeg(dalek[i].getRow(), dalek[i].getCol());
                     dalek[i].advanceTowards(doc);
-                    b.putPeg(Color.black, dalek[i].getRow(), dalek[i].getCol());
+                    //Fixes a bug where Dalek's disappear when going into a position
+                    //another Dalek was just at
+                    for(int n = 0; n < 3; n++){
+                        b.putPeg(Color.black, dalek[n].getRow(), dalek[n].getCol());
+                    }
                 }
                 //If a Dalek catches the doctor, then the doctor dies and the
                 //Dalek's win
