@@ -83,7 +83,6 @@ public class CatchGame {
                 //into each other
             }if(dalek[2].getRow() == dalek[1].getRow()
                     && dalek[2].getCol() == dalek[1].getCol()){
-                b.removePeg(dalek[2].getRow(), dalek[2].getCol());
                 //Set both Dalek's into a crashed state
                 dalek[2].crash();
                 dalek[1].crash();
@@ -91,7 +90,6 @@ public class CatchGame {
                 b.putPeg(Color.red, dalek[1].getRow(), dalek[1].getCol());
             }if(dalek[2].getRow() == dalek[0].getRow()
                     && dalek[2].getCol() == dalek[0].getCol()){
-                b.removePeg(dalek[2].getRow(), dalek[2].getCol());
                 //Set both Dalek's into a crashed state
                 dalek[2].crash();
                 dalek[0].crash();
@@ -99,7 +97,6 @@ public class CatchGame {
                 b.putPeg(Color.red, dalek[0].getRow(), dalek[0].getCol());
             }if(dalek[0].getRow() == dalek[1].getRow()
                     && dalek[0].getCol() == dalek[1].getCol()){
-                b.removePeg(dalek[0].getRow(), dalek[0].getCol());
                 //Set both Dalek's into a crashed state
                 dalek[0].crash();
                 dalek[1].crash();
