@@ -34,7 +34,7 @@ public class Doctor {
         //If the player clicks anywhere on the board that's not beside the doctor,
         //then the doctor teleports to a random location
         if(newRow - this.row > 1 || newRow - this.row < -1
-                && newCol - this.col > 1 || newCol - this.col < -1){
+                || newCol - this.col > 1 || newCol - this.col < -1){
             int RRow = (int)(Math.random()*12);
             int RCol = (int)(Math.random()*12);
             //If statement keeps the doctor from teleporting in place
