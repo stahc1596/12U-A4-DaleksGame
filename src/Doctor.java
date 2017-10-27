@@ -35,13 +35,9 @@ public class Doctor {
         //then the doctor teleports to a random location
         if(newRow - this.row > 1 || newRow - this.row < -1
                 || newCol - this.col > 1 || newCol - this.col < -1){
-            int RRow = (int)(Math.random()*12);
-            int RCol = (int)(Math.random()*12);
-            //If statement keeps the doctor from teleporting in place
-            if(RRow != this.row || RCol != this.col){
-                this.row = RRow;
-                this.col = RCol;
-            }
+            this.row = (int)(Math.random()*12);
+            this.col = (int)(Math.random()*12);
+            
             //If the player clicks anywhere on the board that is beside the doctor,
             //then the doctor moves there
         }if(newRow - this.row == 1){
