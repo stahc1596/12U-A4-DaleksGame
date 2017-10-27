@@ -82,6 +82,7 @@ public class CatchGame {
                 if(doc.getRow() == dalek[i].getRow() && doc.getCol() == dalek[i].getCol()){
                     alive = false;
                     b.displayMessage("You Lose! Try again?");
+                    b.putPeg(Color.yellow, doc.getRow(), doc.getCol());
                 }
                 //If statements are used to check to see if any Dalek's crash
                 //into each other
